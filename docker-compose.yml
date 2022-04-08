@@ -1,0 +1,10 @@
+version: "3"
+services:
+  reddit-trend-topics:
+    container_name: 'reddit-trend-topics'
+    command: bash -c "jupyter lab --notebook-dir=/home/reddit-trend-topics --ip='*' --port=8888 --no-browser --allow-root"
+    build: .
+    ports:
+      - '8888:8888'
+    volumes:
+      - ./:/home/reddit-trend-topics
